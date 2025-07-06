@@ -1,12 +1,45 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import HeroSection from '../components/HeroSection';
+import AboutSection from '../components/AboutSection';
+import SkillsSection from '../components/SkillsSection';
+import ProjectsSection from '../components/ProjectsSection';
+import ResumeSection from '../components/ResumeSection';
+import CertificatesSection from '../components/CertificatesSection';
+import ContactSection from '../components/ContactSection';
+import Navigation from '../components/Navigation';
 
 const Index = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className={`min-h-screen transition-colors duration-300 ${
+      darkMode ? 'dark bg-portfolio-darker' : 'bg-white'
+    }`}>
+      <Navigation darkMode={darkMode} setDarkMode={setDarkMode} />
+      
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ResumeSection />
+        <CertificatesSection />
+        <ContactSection />
+      </motion.div>
     </div>
   );
 };
