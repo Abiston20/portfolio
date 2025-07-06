@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
@@ -22,14 +21,14 @@ const SkillsSection = () => {
       icon: Database,
       color: "text-portfolio-secondary",
       bgColor: "bg-portfolio-secondary/10",
-      skills: ["Java", "Spring Boot", "Git & GitHub", "MySQL", "REST APIs", "Version Control"]
+      skills: ["Java", "Spring Boot", "MySQL", "Python"]
     },
     {
       title: "AI & Data",
       icon: Brain,
       color: "text-portfolio-accent",
       bgColor: "bg-portfolio-accent/10",
-      skills: ["AI Tools", "Power BI", "Data Analytics", "Computer Vision", "OpenCV", "Python"]
+      skills: ["AI Tools", "Power BI", "Data Analytics", "Machine Learning", "Python"]
     },
     {
       title: "Soft Skills",

@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
@@ -13,7 +12,7 @@ const ResumeSection = () => {
   const experiences = [
     {
       title: "AI-Based Career Counselor Project",
-      organization: "Final Year Project",
+      organization: "Final Year Project", 
       period: "2024 - Present",
       location: "University",
       description: "Leading the development of an intelligent web platform for career guidance using AI recommendations.",
@@ -23,17 +22,9 @@ const ResumeSection = () => {
       title: "Gesture-Controlled Interface",
       organization: "Personal Project",
       period: "2023",
-      location: "Self-Directed",
+      location: "Self-Directed", 
       description: "Developed a computer vision system for touchless laptop control using hand gestures.",
       highlights: ["Computer Vision", "OpenCV", "Python Programming"]
-    },
-    {
-      title: "Engineering Student",
-      organization: "University",
-      period: "2021 - Present",
-      location: "India",
-      description: "Pursuing Bachelor's degree with focus on computer science and software engineering.",
-      highlights: ["Academic Excellence", "Project Leadership", "Technical Skills"]
     }
   ];
 

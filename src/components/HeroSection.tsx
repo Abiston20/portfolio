@@ -13,30 +13,58 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Animated Background */}
+      {/* Enhanced Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-cyan-50 dark:from-portfolio-darker dark:via-portfolio-dark dark:to-slate-900">
-        <div className="absolute inset-0 bg-gradient-to-r from-portfolio-primary/10 via-portfolio-secondary/10 to-portfolio-accent/10 animate-gradient-shift bg-[length:400%_400%]"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-portfolio-primary/20 via-portfolio-secondary/15 to-portfolio-accent/20 animate-gradient-shift bg-[length:400%_400%]"></div>
+        
+        {/* Additional gradient layers for more depth */}
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-portfolio-primary/5 to-portfolio-secondary/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-bl from-purple-100/30 via-transparent to-blue-100/30 dark:from-purple-900/20 dark:to-blue-900/20"></div>
       </div>
       
-      {/* Floating Elements */}
+      {/* Enhanced Floating Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(6)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-20 h-20 bg-gradient-to-r from-portfolio-primary/20 to-portfolio-secondary/20 rounded-full blur-xl"
+            className={`absolute w-${12 + i * 2} h-${12 + i * 2} bg-gradient-to-r from-portfolio-primary/30 to-portfolio-secondary/25 rounded-full blur-xl`}
             animate={{
-              x: [0, 100, 0],
-              y: [0, -100, 0],
-              scale: [1, 1.2, 1],
+              x: [0, 120 + i * 20, 0],
+              y: [0, -120 - i * 15, 0],
+              scale: [1, 1.3 + i * 0.1, 1],
+              rotate: [0, 180, 360],
             }}
             transition={{
-              duration: 10 + i * 2,
+              duration: 12 + i * 3,
               repeat: Infinity,
-              delay: i * 2,
+              delay: i * 1.5,
+              ease: "easeInOut",
             }}
             style={{
-              left: `${10 + i * 15}%`,
-              top: `${20 + i * 10}%`,
+              left: `${5 + i * 12}%`,
+              top: `${15 + i * 8}%`,
+            }}
+          />
+        ))}
+        
+        {/* Additional smaller floating elements */}
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={`small-${i}`}
+            className="absolute w-6 h-6 bg-gradient-to-r from-portfolio-accent/40 to-portfolio-primary/30 rounded-full blur-sm"
+            animate={{
+              x: [0, -80 - i * 10, 0],
+              y: [0, 100 + i * 20, 0],
+              opacity: [0.3, 0.8, 0.3],
+            }}
+            transition={{
+              duration: 8 + i * 2,
+              repeat: Infinity,
+              delay: i * 0.8,
+            }}
+            style={{
+              right: `${10 + i * 15}%`,
+              top: `${25 + i * 12}%`,
             }}
           />
         ))}
@@ -72,7 +100,7 @@ const HeroSection = () => {
             transition={{ delay: 0.6, duration: 0.6 }}
             className="text-xl sm:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mb-4 font-light"
           >
-            Final Year Engineering Student | Web Developer | AI Enthusiast
+            Software & Web Developer | Python Programmer
           </motion.p>
           
           <motion.p

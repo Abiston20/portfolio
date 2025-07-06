@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
@@ -13,17 +12,17 @@ const CertificatesSection = () => {
 
   const certificates = [
     {
-      title: "Introduction to Artificial Intelligence",
-      organization: "Tech Institute",
+      title: "Full Stack Web Development",
+      organization: "Tech Academy", 
       date: "2024",
-      description: "Comprehensive course covering AI fundamentals, machine learning basics, and practical applications.",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=600&h=400&fit=crop",
-      skills: ["AI Fundamentals", "Machine Learning", "Data Science"]
+      description: "Comprehensive course covering modern web development technologies, from frontend frameworks to backend APIs.",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop",
+      skills: ["React", "Node.js", "MongoDB", "REST APIs"]
     },
     {
       title: "Data Analytics using Power BI",
       organization: "IEI, SRM Institute",
-      date: "2023",
+      date: "2023", 
       description: "Hands-on workshop focusing on data visualization, business intelligence, and dashboard creation.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
       skills: ["Power BI", "Data Visualization", "Business Intelligence"]
