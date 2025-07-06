@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Download, FileText, Calendar, MapPin, Trophy } from 'lucide-react';
+import { Download, FileText, Calendar, MapPin, Trophy, GraduationCap } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
@@ -11,12 +11,22 @@ const ResumeSection = () => {
 
   const experiences = [
     {
+      title: "B.Tech Information Technology",
+      organization: "Loyola Institute of Technology",
+      period: "2021 - 2025",
+      location: "Chennai",
+      description: "Final year student pursuing Bachelor of Technology in Information Technology with focus on software development and emerging technologies.",
+      highlights: ["Software Development", "Web Technologies", "Database Management"],
+      type: "education"
+    },
+    {
       title: "AI-Based Career Counselor Project",
       organization: "Final Year Project", 
       period: "2024 - Present",
       location: "University",
       description: "Leading the development of an intelligent web platform for career guidance using AI recommendations.",
-      highlights: ["AI Integration", "Full-Stack Development", "User Research"]
+      highlights: ["AI Integration", "Full-Stack Development", "User Research"],
+      type: "project"
     },
     {
       title: "Gesture-Controlled Interface",
@@ -24,7 +34,8 @@ const ResumeSection = () => {
       period: "2023",
       location: "Self-Directed", 
       description: "Developed a computer vision system for touchless laptop control using hand gestures.",
-      highlights: ["Computer Vision", "OpenCV", "Python Programming"]
+      highlights: ["Computer Vision", "OpenCV", "Python Programming"],
+      type: "project"
     }
   ];
 
@@ -95,7 +106,7 @@ const ResumeSection = () => {
           >
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8 flex items-center">
               <Calendar className="w-6 h-6 text-portfolio-primary mr-2" />
-              Experience Timeline
+              Education & Experience Timeline
             </h3>
             
             <div className="space-y-8">
@@ -109,7 +120,11 @@ const ResumeSection = () => {
                 >
                   <div className="flex">
                     <div className="flex flex-col items-center mr-6">
-                      <div className="w-4 h-4 bg-portfolio-primary rounded-full"></div>
+                      <div className={`w-4 h-4 ${exp.type === 'education' ? 'bg-portfolio-secondary' : 'bg-portfolio-primary'} rounded-full`}>
+                        {exp.type === 'education' && (
+                          <GraduationCap className="w-3 h-3 text-white absolute -ml-0.5 -mt-0.5" />
+                        )}
+                      </div>
                       {index !== experiences.length - 1 && (
                         <div className="w-0.5 h-full bg-gray-300 dark:bg-gray-600 mt-2"></div>
                       )}
@@ -143,7 +158,11 @@ const ResumeSection = () => {
                           {exp.highlights.map((highlight) => (
                             <span
                               key={highlight}
-                              className="px-3 py-1 text-xs bg-portfolio-primary/10 text-portfolio-primary rounded-full"
+                              className={`px-3 py-1 text-xs rounded-full ${
+                                exp.type === 'education' 
+                                  ? 'bg-portfolio-secondary/10 text-portfolio-secondary'
+                                  : 'bg-portfolio-primary/10 text-portfolio-primary'
+                              }`}
                             >
                               {highlight}
                             </span>
