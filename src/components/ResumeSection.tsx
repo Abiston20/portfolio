@@ -1,13 +1,15 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Download, FileText, Calendar, MapPin, Trophy, GraduationCap } from 'lucide-react';
+import { Download, FileText, Calendar, MapPin, Trophy, GraduationCap, Eye } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const ResumeSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const navigate = useNavigate();
 
   const experiences = [
     {
@@ -85,10 +87,21 @@ const ResumeSection = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ delay: 0.3, duration: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Button
               size="lg"
+              onClick={() => navigate('/resume')}
               className="bg-portfolio-primary hover:bg-portfolio-primary/90 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-glow transition-all duration-300 group"
+            >
+              <Eye className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+              View My Resume
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => navigate('/resume')}
+              className="border-portfolio-primary text-portfolio-primary hover:bg-portfolio-primary hover:text-white px-8 py-3 rounded-full transition-all duration-300 group"
             >
               <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
               Download Resume

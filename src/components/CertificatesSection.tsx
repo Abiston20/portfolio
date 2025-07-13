@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
@@ -16,7 +17,7 @@ const CertificatesSection = () => {
       organization: "Connected Core Technology Solutions", 
       date: "2023",
       description: "Comprehensive certification in AI and ML technologies, algorithms, and practical implementations.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
       skills: ["Machine Learning", "Deep Learning", "Python", "TensorFlow"]
     },
     {
