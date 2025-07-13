@@ -13,7 +13,7 @@ const ResumeSection = () => {
     {
       title: "B.Tech Information Technology",
       organization: "Loyola Institute of Technology",
-      period: "2021 - 2025",
+      period: "2022 - 2026",
       location: "Chennai",
       description: "Final year student pursuing Bachelor of Technology in Information Technology with focus on software development and emerging technologies.",
       highlights: ["Software Development", "Web Technologies", "Database Management"],
@@ -22,8 +22,8 @@ const ResumeSection = () => {
     {
       title: "AI-Based Career Counselor Project",
       organization: "Final Year Project", 
-      period: "2024 - Present",
-      location: "University",
+      period: "2025 - Present",
+      location: "Self-Directed",
       description: "Leading the development of an intelligent web platform for career guidance using AI recommendations.",
       highlights: ["AI Integration", "Full-Stack Development", "User Research"],
       type: "project"

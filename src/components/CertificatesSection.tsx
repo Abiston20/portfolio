@@ -12,12 +12,12 @@ const CertificatesSection = () => {
 
   const certificates = [
     {
-      title: "Full Stack Web Development",
-      organization: "Tech Academy", 
-      date: "2024",
-      description: "Comprehensive course covering modern web development technologies, from frontend frameworks to backend APIs.",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop",
-      skills: ["React", "Node.js", "MongoDB", "REST APIs"]
+      title: "Artificial Intelligence & Machine Learning",
+      organization: "Connected Core Technology Solutions", 
+      date: "2023",
+      description: "Comprehensive certification in AI and ML technologies, algorithms, and practical implementations.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
+      skills: ["Machine Learning", "Deep Learning", "Python", "TensorFlow"]
     },
     {
       title: "Data Analytics using Power BI",
