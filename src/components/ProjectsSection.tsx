@@ -164,7 +164,11 @@ const ProjectsSection = () => {
                     <div className="flex gap-2">
                       <Button size="sm" variant="outline" className="flex-1 group-hover:border-portfolio-primary group-hover:text-portfolio-primary">
                         <ExternalLink className="w-4 h-4 mr-2" />
-                        View Project
+                        Demo
+                      </Button>
+                      <Button size="sm" variant="outline" className="flex-1 group-hover:border-portfolio-secondary group-hover:text-portfolio-secondary">
+                        <Github className="w-4 h-4 mr-2" />
+                        Code
                       </Button>
                     </div>
                   </CardContent>
