@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { ChevronDown, Download, Eye, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -100,7 +99,7 @@ const HeroSection = () => {
             transition={{ delay: 0.6, duration: 0.6 }}
             className="text-xl sm:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 mb-4 font-light"
           >
-            Software & Web Developer | Python Programmer
+            Freelancer & Web Developer | Python Programmer
           </motion.p>
           
           <motion.p

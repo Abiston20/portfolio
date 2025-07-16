@@ -1,8 +1,9 @@
+
 import emailjs from '@emailjs/browser';
 
-// Initialize EmailJS with your public key
+// EmailJS configuration - You'll need to replace these with your actual values
 const EMAILJS_SERVICE_ID = 'your_service_id';
-const EMAILJS_TEMPLATE_ID = 'your_template_id';
+const EMAILJS_TEMPLATE_ID = 'your_template_id'; 
 const EMAILJS_PUBLIC_KEY = 'your_public_key';
 
 export interface ContactFormData {
@@ -14,6 +15,8 @@ export interface ContactFormData {
 
 export const sendEmail = async (formData: ContactFormData): Promise<boolean> => {
   try {
+    console.log('Sending email with data:', formData);
+    
     const result = await emailjs.send(
       EMAILJS_SERVICE_ID,
       EMAILJS_TEMPLATE_ID,
@@ -23,19 +26,25 @@ export const sendEmail = async (formData: ContactFormData): Promise<boolean> => 
         subject: formData.subject,
         message: formData.message,
         to_email: 'abiston20@gmail.com',
+        reply_to: formData.email,
       },
       EMAILJS_PUBLIC_KEY
     );
 
     console.log('Email sent successfully:', result);
-    return true;
+    return result.status === 200;
   } catch (error) {
     console.error('Failed to send email:', error);
     return false;
   }
 };
 
-// Initialize EmailJS (call this once in your app)
+// Initialize EmailJS
 export const initEmailJS = () => {
-  emailjs.init(EMAILJS_PUBLIC_KEY);
+  if (EMAILJS_PUBLIC_KEY && EMAILJS_PUBLIC_KEY !== 'your_public_key') {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+    console.log('EmailJS initialized');
+  } else {
+    console.warn('EmailJS not configured - using demo mode');
+  }
 };

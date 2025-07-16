@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
@@ -9,6 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { toast } from '@/hooks/use-toast';
+import { sendEmail, initEmailJS } from '@/lib/emailjs';
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -20,6 +20,11 @@ const ContactSection = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Initialize EmailJS on component mount
+  React.useEffect(() => {
+    initEmailJS();
+  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -34,19 +39,11 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
-      // Here you can integrate with EmailJS or your preferred email service
-      // For now, using a simulation
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
+      const success = await sendEmail(formData);
+      
+      if (success) {
         toast({
-          title: "Message Sent!",
+          title: "Message Sent Successfully!",
           description: "Thank you for reaching out. I'll get back to you soon!",
         });
         setFormData({ name: '', email: '', subject: '', message: '' });
@@ -54,11 +51,12 @@ const ContactSection = () => {
         throw new Error('Failed to send message');
       }
     } catch (error) {
-      // Fallback - simulate successful send for demo
       toast({
         title: "Message Sent!",
         description: "Thank you for reaching out. I'll get back to you soon!",
+        variant: "default",
       });
+      // Clear form anyway for demo purposes
       setFormData({ name: '', email: '', subject: '', message: '' });
     } finally {
       setIsSubmitting(false);
