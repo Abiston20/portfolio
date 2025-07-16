@@ -41,7 +41,7 @@ export const sendEmail = async (formData: ContactFormData): Promise<boolean> => 
 
 // Initialize EmailJS
 export const initEmailJS = () => {
-  if (EMAILJS_PUBLIC_KEY && EMAILJS_PUBLIC_KEY !== 'your_public_key') {
+  if (EMAILJS_PUBLIC_KEY) {
     emailjs.init(EMAILJS_PUBLIC_KEY);
     console.log('EmailJS initialized');
   } else {
