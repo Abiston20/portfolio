@@ -42,7 +42,7 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
             whileHover={{ scale: 1.05 }}
             className="text-xl font-bold text-portfolio-primary dark:text-white"
           >
-            Abiston
+            ABISTON
           </motion.div>
 
           {/* Desktop Navigation */}

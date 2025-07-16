@@ -13,20 +13,28 @@ const CertificatesSection = () => {
 
   const certificates = [
     {
-      title: "Artificial Intelligence & Machine Learning",
-      organization: "Connected Core Technology Solutions", 
-      date: "2023",
-      description: "Comprehensive certification in AI and ML technologies, algorithms, and practical implementations.",
-      image: "/lovable-uploads/3b6a20b8-f7d3-4207-a59d-ce5931582ec3.png",
-      skills: ["Machine Learning", "Deep Learning", "Python", "TensorFlow", "Computer Vision"]
-    },
-    {
       title: "Gesture-Controlled Interface Project",
       organization: "Dhanalakshmi Srinivasan College",
       date: "2024",
       description: "Successfully completed and demonstrated gesture-based laptop control system using computer vision.",
       image: "/lovable-uploads/8c37fbae-214c-4ac0-a04e-62302ad9d8fa.png",
       skills: ["Computer Vision", "OpenCV", "Python", "HCI", "Project Management"]
+    },
+    {
+      title: "National Level 24-Hour Hackathon",
+      organization: "CARE College of Engineering, Trichy",
+      date: "2025",
+      description: "Successfully participated in the National Level 24-Hour Hackathon, demonstrating endurance and technical problem-solving skills.",
+      image: "/lovable-uploads/5c65c7ca-e774-4a4d-8b17-d144645ea052.png",
+      skills: ["Hackathon", "Rapid Development", "Team Work", "Innovation", "Time Management"]
+    },
+    {
+      title: "Artificial Intelligence & Machine Learning",
+      organization: "Connected Core Technology Solutions", 
+      date: "2023",
+      description: "Comprehensive certification in AI and ML technologies, algorithms, and practical implementations.",
+      image: "/lovable-uploads/3b6a20b8-f7d3-4207-a59d-ce5931582ec3.png",
+      skills: ["Machine Learning", "Deep Learning", "Python", "TensorFlow", "Computer Vision"]
     },
     {
       title: "Data Analytics using Power BI",
@@ -43,14 +51,6 @@ const CertificatesSection = () => {
       description: "Participated in NEXATHON'25 as Team Gear Boltz, showcasing innovation and technical expertise in competitive environment.",
       image: "/lovable-uploads/873523a5-b923-4082-a674-06eafe7e612f.png",
       skills: ["Team Collaboration", "Problem Solving", "Innovation", "Technical Presentation", "Competitive Programming"]
-    },
-    {
-      title: "National Level 24-Hour Hackathon",
-      organization: "CARE College of Engineering, Trichy",
-      date: "2025",
-      description: "Successfully participated in the National Level 24-Hour Hackathon, demonstrating endurance and technical problem-solving skills.",
-      image: "/lovable-uploads/5c65c7ca-e774-4a4d-8b17-d144645ea052.png",
-      skills: ["Hackathon", "Rapid Development", "Team Work", "Innovation", "Time Management"]
     }
   ];
 
