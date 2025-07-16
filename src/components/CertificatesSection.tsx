@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
@@ -36,6 +35,22 @@ const CertificatesSection = () => {
       description: "Hands-on workshop focusing on data visualization, business intelligence, and dashboard creation.",
       image: "/lovable-uploads/51cb5323-f8d9-4772-a7a4-1fe4aec7ea5d.png",
       skills: ["Power BI", "Data Visualization", "Business Intelligence", "Data Analytics"]
+    },
+    {
+      title: "NEXATHON'25 Participation",
+      organization: "KCG College of Technology",
+      date: "2025",
+      description: "Participated in NEXATHON'25 as Team Gear Boltz, showcasing innovation and technical expertise in competitive environment.",
+      image: "/lovable-uploads/873523a5-b923-4082-a674-06eafe7e612f.png",
+      skills: ["Team Collaboration", "Problem Solving", "Innovation", "Technical Presentation", "Competitive Programming"]
+    },
+    {
+      title: "National Level 24-Hour Hackathon",
+      organization: "CARE College of Engineering, Trichy",
+      date: "2025",
+      description: "Successfully participated in the National Level 24-Hour Hackathon, demonstrating endurance and technical problem-solving skills.",
+      image: "/lovable-uploads/5c65c7ca-e774-4a4d-8b17-d144645ea052.png",
+      skills: ["Hackathon", "Rapid Development", "Team Work", "Innovation", "Time Management"]
     }
   ];
 
@@ -207,7 +222,7 @@ const CertificatesSection = () => {
             All Certifications
           </h3>
           
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
             {certificates.map((cert, index) => (
               <motion.div
                 key={index}
