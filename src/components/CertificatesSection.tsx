@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Award, Eye, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Award, Eye, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
@@ -10,6 +10,7 @@ const CertificatesSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedCertificate, setSelectedCertificate] = useState<number | null>(null);
 
   const certificates = [
     {
@@ -17,24 +18,24 @@ const CertificatesSection = () => {
       organization: "Connected Core Technology Solutions", 
       date: "2023",
       description: "Comprehensive certification in AI and ML technologies, algorithms, and practical implementations.",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
-      skills: ["Machine Learning", "Deep Learning", "Python", "TensorFlow"]
+      image: "/lovable-uploads/3b6a20b8-f7d3-4207-a59d-ce5931582ec3.png",
+      skills: ["Machine Learning", "Deep Learning", "Python", "TensorFlow", "Computer Vision"]
+    },
+    {
+      title: "Gesture-Controlled Interface Project",
+      organization: "Dhanalakshmi Srinivasan College",
+      date: "2024",
+      description: "Successfully completed and demonstrated gesture-based laptop control system using computer vision.",
+      image: "/lovable-uploads/8c37fbae-214c-4ac0-a04e-62302ad9d8fa.png",
+      skills: ["Computer Vision", "OpenCV", "Python", "HCI", "Project Management"]
     },
     {
       title: "Data Analytics using Power BI",
       organization: "IEI, SRM Institute",
-      date: "2023", 
+      date: "2024", 
       description: "Hands-on workshop focusing on data visualization, business intelligence, and dashboard creation.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-      skills: ["Power BI", "Data Visualization", "Business Intelligence"]
-    },
-    {
-      title: "Gesture-Controlled Interface Project",
-      organization: "University Project",
-      date: "2023",
-      description: "Successfully completed and demonstrated gesture-based laptop control system using computer vision.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
-      skills: ["Computer Vision", "OpenCV", "Python", "HCI"]
+      image: "/lovable-uploads/51cb5323-f8d9-4772-a7a4-1fe4aec7ea5d.png",
+      skills: ["Power BI", "Data Visualization", "Business Intelligence", "Data Analytics"]
     }
   ];
 
@@ -44,6 +45,14 @@ const CertificatesSection = () => {
 
   const prevCertificate = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + certificates.length) % certificates.length);
+  };
+
+  const openCertificate = (index: number) => {
+    setSelectedCertificate(index);
+  };
+
+  const closeCertificate = () => {
+    setSelectedCertificate(null);
   };
 
   return (
@@ -86,7 +95,8 @@ const CertificatesSection = () => {
                   transition={{ duration: 0.5 }}
                   src={certificates[currentIndex].image}
                   alt={certificates[currentIndex].title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover cursor-pointer"
+                  onClick={() => openCertificate(currentIndex)}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                 
@@ -158,7 +168,10 @@ const CertificatesSection = () => {
                     </div>
                   </div>
                   
-                  <Button className="bg-portfolio-primary hover:bg-portfolio-primary/90 text-white group">
+                  <Button 
+                    onClick={() => openCertificate(currentIndex)}
+                    className="bg-portfolio-primary hover:bg-portfolio-primary/90 text-white group"
+                  >
                     <Eye className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                     View Certificate
                   </Button>
@@ -202,7 +215,7 @@ const CertificatesSection = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
                 whileHover={{ y: -5, scale: 1.02 }}
-                onClick={() => setCurrentIndex(index)}
+                onClick={() => openCertificate(index)}
                 className="cursor-pointer"
               >
                 <Card className={`shadow-soft hover:shadow-soft-lg transition-all duration-300 border-2 ${
@@ -228,6 +241,49 @@ const CertificatesSection = () => {
             ))}
           </div>
         </motion.div>
+
+        {/* Certificate Modal */}
+        {selectedCertificate !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={closeCertificate}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="relative max-w-4xl max-h-[90vh] w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={closeCertificate}
+                className="absolute top-4 right-4 z-10 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+              >
+                <X className="h-5 w-5" />
+              </Button>
+              
+              <img
+                src={certificates[selectedCertificate].image}
+                alt={certificates[selectedCertificate].title}
+                className="w-full h-full object-contain rounded-lg"
+              />
+              
+              <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-sm rounded-lg p-4 text-white">
+                <h3 className="text-xl font-bold mb-2">
+                  {certificates[selectedCertificate].title}
+                </h3>
+                <p className="text-sm opacity-90">
+                  {certificates[selectedCertificate].organization} • {certificates[selectedCertificate].date}
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
       </div>
     </section>
   );
