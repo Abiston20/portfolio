@@ -1,10 +1,10 @@
 
 import emailjs from '@emailjs/browser';
 
-// EmailJS configuration - You'll need to replace these with your actual values
-const EMAILJS_SERVICE_ID = 'your_service_id';
-const EMAILJS_TEMPLATE_ID = 'your_template_id'; 
-const EMAILJS_PUBLIC_KEY = 'your_public_key';
+// EmailJS configuration - Updated with actual values
+const EMAILJS_SERVICE_ID = 'service_pnv37qn';
+const EMAILJS_TEMPLATE_ID = 'template_6rlod2w'; 
+const EMAILJS_PUBLIC_KEY = '05SBSlDDvG_SVGy6h';
 
 export interface ContactFormData {
   name: string;
