@@ -50,15 +50,16 @@ const AboutSection = () => {
                 
                 <div className="mb-6">
                   <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                    I love bringing ideas to life through clean code, innovative UI, and meaningful tech solutions. 
-                    My current final-year project is an <span className="text-portfolio-primary font-semibold">AI-Based Career Counselor</span>, 
-                    aimed at guiding students toward better career decisions using smart recommendations.
+                    I specialize in creating modern, responsive web applications using cutting-edge technologies. 
+                    My expertise spans from <span className="text-portfolio-primary font-semibold">Python programming</span> to 
+                    full-stack development, with a keen interest in <span className="text-portfolio-secondary font-semibold">AI/ML integration</span> 
+                    and innovative user experiences.
                   </p>
                 </div>
                 
                 <div className="text-center">
                   <p className="text-portfolio-secondary font-medium text-lg">
-                    I'm always learning and growing—one project at a time.
+                    I'm always eager to tackle new challenges and turn creative ideas into reality.
                   </p>
                 </div>
               </CardContent>

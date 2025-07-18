@@ -82,7 +82,7 @@ const HeroSection = () => {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-lg sm:text-xl text-portfolio-primary dark:text-portfolio-accent font-medium mb-4"
           >
-            Hi, I'm
+            Welcome, I'm
           </motion.p>
           
           <motion.h1
@@ -91,7 +91,7 @@ const HeroSection = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-5xl sm:text-7xl lg:text-8xl font-bold text-gray-900 dark:text-white mb-6 bg-gradient-to-r from-portfolio-primary via-portfolio-secondary to-portfolio-accent bg-clip-text text-transparent"
           >
-            Abiston
+            ABISTON D S
           </motion.h1>
           
           <motion.p
@@ -107,9 +107,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
-            className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto"
+            className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-            I build modern web applications and AI-powered solutions. Let's create something impactful together!
+            Crafting elegant digital experiences through innovative web solutions and AI-powered applications. 
+            Let's transform your vision into extraordinary reality.
           </motion.p>
           
           <motion.div
