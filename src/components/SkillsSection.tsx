@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
@@ -21,14 +22,14 @@ const SkillsSection = () => {
       icon: Database,
       color: "text-portfolio-secondary",
       bgColor: "bg-portfolio-secondary/10",
-      skills: ["Java", "Spring Boot", "MySQL", "Python"]
+      skills: ["Java", "Spring Boot", "MySQL", "Python", "Zoho CRM", "Zoho Creator", "Zoho SalesIQ"]
     },
     {
       title: "AI & Data",
       icon: Brain,
       color: "text-portfolio-accent",
       bgColor: "bg-portfolio-accent/10",
-      skills: ["AI Tools", "Power BI", "Data Analytics", "Machine Learning", "Python"]
+      skills: ["AI Tools", "Power BI", "Data Analytics", "Machine Learning", "Python", "Prompt Engineering"]
     },
     {
       title: "Soft Skills",

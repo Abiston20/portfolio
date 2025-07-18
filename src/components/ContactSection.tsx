@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Facebook } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -90,7 +90,7 @@ const ContactSection = () => {
   const socialLinks = [
     { icon: Github, href: "https://github.com/Abiston20", label: "GitHub" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/abiston20", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" }
+    { icon: Facebook, href: "https://www.facebook.com/share/1ChJBDmSkU/", label: "Facebook" }
   ];
 
   return (

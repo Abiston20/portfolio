@@ -41,19 +41,19 @@ const AboutSection = () => {
                     🧑‍💻 Who I Am
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                    I'm a passionate and results-driven final year engineering student with a solid foundation in 
-                    <span className="text-portfolio-primary font-semibold"> Web Development</span> and 
-                    <span className="text-portfolio-secondary font-semibold"> Software Engineering</span>, 
-                    currently exploring the power of <span className="text-portfolio-accent font-semibold">Artificial Intelligence</span>.
+                    I'm a passionate and results-driven final year engineering student with expertise spanning 
+                    <span className="text-portfolio-primary font-semibold"> Software Development</span>, 
+                    <span className="text-portfolio-secondary font-semibold"> Web Development</span>, and 
+                    <span className="text-portfolio-accent font-semibold"> AI/ML Technologies</span>.
                   </p>
                 </div>
                 
                 <div className="mb-6">
                   <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                    I specialize in creating modern, responsive web applications using cutting-edge technologies. 
-                    My expertise spans from <span className="text-portfolio-primary font-semibold">Python programming</span> to 
-                    full-stack development, with a keen interest in <span className="text-portfolio-secondary font-semibold">AI/ML integration</span> 
-                    and innovative user experiences.
+                    My technical arsenal includes <span className="text-portfolio-primary font-semibold">Python</span> and 
+                    <span className="text-portfolio-secondary font-semibold"> Java programming</span>, modern web technologies, 
+                    and cutting-edge <span className="text-portfolio-accent font-semibold">AI prompt engineering</span>. 
+                    I excel at transforming complex requirements into elegant, scalable solutions.
                   </p>
                 </div>
                 
