@@ -94,7 +94,7 @@ const AboutSection = () => {
                 <h4 className="text-xl font-semibold text-gray-900 dark:text-white">Goals</h4>
               </div>
               <p className="text-gray-600 dark:text-gray-300">
-                To become a full-stack developer who bridges the gap between AI and web development.
+                To become a versatile technology professional who creates innovative solutions by seamlessly integrating AI, web development, and enterprise automation tools to solve real-world business challenges.
               </p>
             </motion.div>
 

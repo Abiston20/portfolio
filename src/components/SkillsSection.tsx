@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
@@ -15,7 +14,7 @@ const SkillsSection = () => {
       icon: Code,
       color: "text-portfolio-primary",
       bgColor: "bg-portfolio-primary/10",
-      skills: ["HTML", "CSS", "JavaScript", "React.js", "Responsive Design", "UI/UX"]
+      skills: ["HTML", "CSS", "JavaScript", "React.js", "UI/UX"]
     },
     {
       title: "Programming & Tools",

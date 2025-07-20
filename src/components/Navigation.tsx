@@ -38,12 +38,13 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <motion.div
+          <motion.button
             whileHover={{ scale: 1.05 }}
-            className="text-xl font-bold text-portfolio-primary dark:text-white"
+            onClick={() => scrollToSection('#hero')}
+            className="text-lg font-bold text-portfolio-primary dark:text-white cursor-pointer hover:text-portfolio-secondary transition-colors duration-200"
           >
             ABISTON D S
-          </motion.div>
+          </motion.button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
