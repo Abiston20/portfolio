@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
@@ -20,7 +19,9 @@ const ProjectsSection = () => {
       icon: Brain,
       color: "text-portfolio-primary",
       bgColor: "bg-portfolio-primary/10",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop"
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop",
+      demoUrl: null,
+      codeUrl: null
     },
     {
       title: "Gesture-Controlled Laptop Interface",
@@ -31,20 +32,38 @@ const ProjectsSection = () => {
       icon: Hand,
       color: "text-portfolio-secondary",
       bgColor: "bg-portfolio-secondary/10",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop"
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
+      demoUrl: null,
+      codeUrl: "https://github.com/Abiston20/Gesture_control"
     },
     {
       title: "Personal Portfolio Website",
       description: "Responsive website to showcase my work, skills, and background. Designed with animations and modern UI principles.",
       techStack: ["React", "Tailwind CSS", "Framer Motion"],
-      features: ["Responsive design", "Smooth animations", "Dark mode"],
+      features: ["Modern design", "Smooth animations", "Dark mode"],
       status: "Live",
       icon: Globe,
       color: "text-portfolio-accent",
       bgColor: "bg-portfolio-accent/10",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop"
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop",
+      demoUrl: "reload",
+      codeUrl: "https://github.com/Abiston20/portfolio"
     }
   ];
+
+  const handleDemoClick = (demoUrl: string | null) => {
+    if (demoUrl === "reload") {
+      window.location.reload();
+    } else if (demoUrl) {
+      window.open(demoUrl, '_blank');
+    }
+  };
+
+  const handleCodeClick = (codeUrl: string | null) => {
+    if (codeUrl) {
+      window.open(codeUrl, '_blank');
+    }
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -162,11 +181,23 @@ const ProjectsSection = () => {
                     </div>
                     
                     <div className="flex gap-2">
-                      <Button size="sm" variant="outline" className="flex-1 group-hover:border-portfolio-primary group-hover:text-portfolio-primary">
+                      <Button 
+                        size="sm" 
+                        variant="outline" 
+                        className="flex-1 group-hover:border-portfolio-primary group-hover:text-portfolio-primary"
+                        onClick={() => handleDemoClick(project.demoUrl)}
+                        disabled={!project.demoUrl}
+                      >
                         <ExternalLink className="w-4 h-4 mr-2" />
                         Demo
                       </Button>
-                      <Button size="sm" variant="outline" className="flex-1 group-hover:border-portfolio-secondary group-hover:text-portfolio-secondary">
+                      <Button 
+                        size="sm" 
+                        variant="outline" 
+                        className="flex-1 group-hover:border-portfolio-secondary group-hover:text-portfolio-secondary"
+                        onClick={() => handleCodeClick(project.codeUrl)}
+                        disabled={!project.codeUrl}
+                      >
                         <Github className="w-4 h-4 mr-2" />
                         Code
                       </Button>
