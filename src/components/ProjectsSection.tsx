@@ -11,15 +11,15 @@ const ProjectsSection = () => {
 
   const projects = [
     {
-      title: "AI-Based Career Counselor",
-      description: "An intelligent web platform that recommends careers based on user input, interests, and skills using AI-driven logic.",
-      techStack: ["React", "Spring Boot", "AI APIs", "MySQL"],
-      features: ["Dynamic recommendations", "Clean UI", "Responsive design"],
-      status: "Ongoing",
+      title: "E-Commerce Website",
+      description: "A comprehensive online shopping platform with full product management, cart functionality, and seamless checkout experience across all devices.",
+      techStack: ["React", "JavaScript", "CSS", "HTML"],
+      features: ["Categorized product listing (Electronics, Fashion, Toys, Home Appliances)", "Add to cart & dynamic cart updates", "Checkout functionality", "Clean UI across mobile and desktop"],
+      status: "Completed",
       icon: Brain,
       color: "text-portfolio-primary",
       bgColor: "bg-portfolio-primary/10",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
       demoUrl: null,
       codeUrl: null
     },

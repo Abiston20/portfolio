@@ -41,7 +41,7 @@ const Navigation = ({ darkMode, setDarkMode }: NavigationProps) => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             onClick={() => scrollToSection('#hero')}
-            className="text-lg font-bold text-portfolio-primary dark:text-white cursor-pointer hover:text-portfolio-secondary transition-colors duration-200"
+            className="text-lg font-bold font-playfair text-portfolio-primary dark:text-white cursor-pointer hover:text-portfolio-secondary transition-colors duration-200"
           >
             ABISTON D S
           </motion.button>
